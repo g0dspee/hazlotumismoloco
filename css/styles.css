@@ -66,9 +66,20 @@ body{
 
 /* Carrusel Pag Principal */
 
-#carruselJuegos{
+#carouselExample{
     margin-left: 20px;
     margin-right: 20px;
+}
+
+#mini-producto{
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.row {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;  
 }
 
 @keyframes slide{
