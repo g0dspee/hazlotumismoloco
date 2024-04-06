@@ -21,8 +21,4 @@ ventas.html
 boleta.html
 bodega.html
 
-Test Commit
-Test Commit
-
-Test Commit
-Test Commit
+Test Commit 2
