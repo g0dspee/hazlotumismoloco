@@ -4,20 +4,23 @@
     font-family: monospace;
 }
 
+
+/* Fondo de pagina (body) */
+
 body{
     background-color: antiquewhite;
-
 }
 
-h1 {
-    text-align: center;
-  }
+/* Titulo */
 
 .titulo{
     text-align: center;
     font-size: 40px;
     padding-top: 50px;
 }
+
+/* Slider Box */
+
 .slider-box{
     width: 400px;
     height: 600px;
@@ -41,6 +44,8 @@ h1 {
     width: 300px;
 }
 
+/*Caja Login*/
+
 #containerLogin {
     margin: 20px;
   }
@@ -57,6 +62,9 @@ h1 {
   #containerLogin .boton_ingresar {
     width: 100%;
   }
+
+
+/* Carrusel Pag Principal */
 
 #carruselJuegos{
     margin-left: 20px;
