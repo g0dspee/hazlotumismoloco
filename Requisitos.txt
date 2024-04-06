@@ -1,0 +1,28 @@
+PAGINAS WEB PUBLICAS
+
+index.html
+ficha.html
+registro.html
+nosotros.html
+ingresar.html
+
+PAGINAS WEB DE CLIENTES
+
+carrito.html
+misdatos.html
+miscompras.html
+
+PAGINAS WEB DE ADMINISTRADOR
+
+administracion.html
+productos.html
+usuarios.html
+ventas.html
+boleta.html
+bodega.html
+
+Test Commit
+Test Commit
+
+Test Commit
+Test Commit
