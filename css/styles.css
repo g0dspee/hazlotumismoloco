@@ -19,31 +19,6 @@ body{
     padding-top: 50px;
 }
 
-/* Slider Box */
-
-.slider-box{
-    width: 400px;
-    height: 600px;
-    margin: 50px auto 0;
-}
-
-.slider-box ul{
-    display: flex;
-    padding: 0;
-    width: 400%;
-    animation: slide 10s infinite alternate ease-in-out;
-}
-
-.slider-box li{
-    width: 100%;
-    list-style: none;
-    position: relative;
-}
-
-.slider-box img{
-    width: 300px;
-}
-
 /*Caja Login*/
 
 #containerLogin {
@@ -82,23 +57,22 @@ body{
     margin-right: auto;  
 }
 
-@keyframes slide{
-    0% {margin-left: 0;}
-    20% {margin-left: 0;}
+/* Tarjetas de ficha de videojuegos*/
 
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
-
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
-
-    75% {margin-left: -300%;}
-    100% {margin-left: -300%;}
+.card-img-top{
+    width: 200px;
+    height: auto;
+    max-height: 300px;
 }
 
-@media(max-width:991px){
-    .slider-box{
-        width: 340px;
-    }
-}
-
+.card-content {
+    display: flex;
+  }
+  
+  .card-img-top {
+    width: 200px;
+  }
+  
+  .card-body {
+    margin-left: 20px;
+  }

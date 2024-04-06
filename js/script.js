@@ -26,12 +26,35 @@ if (document.getElementById('menu')) {
 
     }).then(htmlContent => {
 
-    document.getElementById('menu').innerHTML = htmlContent;
+        document.getElementById('menu').innerHTML = htmlContent;
 
-    window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
 
     });
 
 };
 
- 
+//Cambiar estado de logged/unlogged
+
+function iniciarSesion() {
+
+    // Agregar clase de usuario registrado
+    document.body.classList.add("registrado");
+
+    // Quitar clase de usuario anonimo 
+    document.body.classList.remove("anonimo");
+
+}
+
+
+function cerrarSesion() {
+
+    // Quitar clase registrado
+    document.body.classList.remove("registrado");
+
+    // Agregar clase anonimo
+    document.body.classList.add("anonimo");
+}
+
+
+
