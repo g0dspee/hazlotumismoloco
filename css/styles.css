@@ -76,3 +76,27 @@ body{
   .card-body {
     margin-left: 20px;
   }
+
+/* Caja de carrito de pago*/
+
+  .total-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f8f9fa;
+    width: 300px; /* Ajusta el ancho según tus necesidades */
+    margin-bottom: 125px; /* Ajusta el margen superior según tus necesidades */
+    margin-right: 125px; /* Ajusta el margen derecho según tus necesidades */
+  }
+
+
+  .total-section {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .total-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f8f9fa;
+  }
