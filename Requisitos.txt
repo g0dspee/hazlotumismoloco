@@ -1,24 +1,24 @@
 PAGINAS WEB PUBLICAS
 
-index.html
-ficha.html
-registro.html
-nosotros.html
-ingresar.html
+index.html *G
+ficha.html *G
+registro.html *G
+nosotros.html *G
+ingresar.html *G
 
 PAGINAS WEB DE CLIENTES
 
-carrito.html
-misdatos.html
-miscompras.html
+carrito.html *T
+misdatos.html *T
+miscompras.html *T
 
 PAGINAS WEB DE ADMINISTRADOR
 
-administracion.html
-productos.html
-usuarios.html
-ventas.html
-boleta.html
-bodega.html
+administracion.html *T
+productos.html *J
+usuarios.html *J
+ventas.html *J
+boleta.html *J
+bodega.html *J
 
 Test Commit 2
