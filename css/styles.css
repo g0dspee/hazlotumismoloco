@@ -60,9 +60,9 @@ body{
 /* Tarjetas de ficha de videojuegos*/
 
 .card-img-top{
-    width: 200px;
+    width: auto;
     height: auto;
-    max-height: 300px;
+    max-width: 250px;
 }
 
 .card-content {
@@ -83,9 +83,9 @@ body{
     border: 1px solid #ccc;
     padding: 20px;
     background-color: #f8f9fa;
-    width: 300px; /* Ajusta el ancho según tus necesidades */
-    margin-bottom: 125px; /* Ajusta el margen superior según tus necesidades */
-    margin-right: 125px; /* Ajusta el margen derecho según tus necesidades */
+    width: 300px; /* Ajustado ancho para encajar con esquina*/
+    margin-bottom: 125px; 
+    margin-right: 125px; 
   }
 
 
