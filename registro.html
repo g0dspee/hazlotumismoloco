@@ -1,127 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-
-  <body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .formulario {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .titulo {
+            text-align: center;
+        }
+        .btn-primary {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
     <div id="menu"></div>
 
     <div class="container">
-      <h1 class="titulo">Registrarse</h1>
+        <h1 class="titulo">Registrarse</h1>
 
-      <form id="formRegistro">
-        <h2>Crea tu cuenta</h2>
+        <form id="formRegistro" class="formulario">
+            <h2>Crea tu cuenta</h2>
 
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombre"
-                  placeholder="Nombre"
-                />
-              </div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombres</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombres">
+                    </div>
 
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="Email"
-                />
-              </div>
+                    <div class="mb-3">
+                        <label for="apellidos" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
+                    </div>
 
-              <div class="mb-3">
-                <label for="password" class="form-label">Contraseña</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  placeholder="Contraseña"
-                />
-              </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
 
-              <div class="mb-3">
-                <label for="password2" class="form-label"
-                  >Repetir contraseña</label
-                >
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password2"
-                  placeholder="Repetir contraseña"
-                />
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="mb-3">
-                <label for="nombre" class="form-label">Rut</label>
-                <input
-                  required
-                  type="text"
-                  class="form-control"
-                  id="nombre"
-                  aria-describedby="rutHelp"
-                  placeholder="RUT sin puntos y con guión"
-                />
-                <div id="rutHelp" class="form-text">
-                  Escriba su rut sin puntos y con guión
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password2" class="form-label">Repetir contraseña</label>
+                        <input type="password" class="form-control" id="password2" placeholder="Repetir contraseña">
+                    </div>
                 </div>
-                <div class="invalid-feedback">
-                  El RUT es un campo obligatorio
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="rut" class="form-label">Rut</label>
+                        <input required type="text" class="form-control" id="rut" aria-describedby="rutHelp" placeholder="RUT sin puntos y con guión">
+                        <div id="rutHelp" class="form-text">Escriba su RUT sin puntos y con guión</div>
+                        <div class="invalid-feedback">El RUT es un campo obligatorio</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" placeholder="Dirección particular">
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="suscripcion">
+                        <label class="form-check-label" for="suscripcion">Quiero suscribirme para ser cliente premium</label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="imagenPerfil" class="form-label">Sube tu foto de perfil aquí</label>
+                        <input type="file" class="form-control" id="imagenPerfil">
+                    </div>
                 </div>
-              </div>
-              <div class="mb-3">
-                <label for="nombre" class="form-label">Direccion</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombre"
-                  placeholder="Dirección particular"
-                />
-              </div>
-              <div>
-                <input type="checkbox" id="suscripcion" />
-                <label for="suscripcion"
-                  >Quiero suscribirme para ser cliente premium</label
-                >
-              </div>
             </div>
-            <div class="col-md-4">
-              <div style="text-align: center">
-                <img
-                  src="img/anon_user.webp"
-                  alt="Imagen de perfil"
-                  style="display: block; margin: 0 auto; width: 50%"
-                />
-                <p style="text-align: center">Sube tu foto de perfil aquí</p>
-              </div>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary">Registrarse</button>
-        </div>
-      </form>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>
     </div>
 
     <script src="js/script.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
 </html>
+
