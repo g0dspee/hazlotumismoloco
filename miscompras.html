@@ -20,6 +20,20 @@
             padding: 2px;
             border-radius: 2px;
             text-align: center;
+            display: inline-block;
+        }
+
+        /* Estilos para el botón */
+        .btn-small {
+            padding: 2px 5px;
+            font-size: 12px;
+        }
+
+        /* Estilos para separar el ticket y el botón */
+        .ticket-verde,
+        .btn-small {
+            margin-bottom: 5px;
+            margin-right: 5px;
         }
     </style>
 
@@ -53,11 +67,38 @@
                     <td>COMP5678</td>
                     <td>Pagado y Despachado</td>
                     <td>
-                        <div class="ticket-verde">¡Compra confirmada!</div>
+                        <span class="ticket-verde">¡Compra confirmada!</span>
+                        <button type="button" class="btn btn-primary btn-small" data-bs-toggle="modal" data-bs-target="#boletaModal">
+                            Ver Boleta
+                        </button>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="boletaModal" tabindex="-1" aria-labelledby="boletaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="boletaModalLabel">Boleta de Compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Contenido de la boleta -->
+                    <p>Nombre del videojuego: Diablo 4</p>
+                    <p>Precio: $8.000</p>
+                    <p>Fecha de compra: 09-04-2024</p>
+                    <p>Código de despacho: DSP1234</p>
+                    <p>Código de compra: COMP5678</p>
+                    <p>Estado: Pagado y Despachado</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script
@@ -67,4 +108,3 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-
