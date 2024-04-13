@@ -8,7 +8,22 @@
 /* Fondo de pagina (body) */
 
 body{
-    background-color: antiquewhite;
+    background-color: antiquewhite !important;
+}
+
+/* Ajuste de imagenes de carrusel */
+
+.carousel-item img {
+  height: 500px;
+  object-fit: cover; 
+}
+
+/* Fondo translúcido de carrusel */
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo translúcido negro */
+  color: white; /* Color de texto blanco */
+  padding: 10px; /* Espaciado interno */
 }
 
 /* Titulo */
@@ -22,7 +37,7 @@ body{
 /*Caja Login*/
 
 #containerLogin {
-    margin: 20px;
+    margin-left: 150px;
   }
   #containerLogin .cuadro_login {
     max-width: 400px;
@@ -100,3 +115,20 @@ body{
     padding: 10px;
     background-color: #f8f9fa;
   }
+
+  /*Parrafo Nosotros*/
+
+  #pNosotros {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+
+  /*Imagenes "nosotros"*/
+
+  .img-staff {
+    width: 100%;
+    height: 250px; /* Elige la altura deseada */
+    object-fit: cover;
+    object-position: center top;
+}
