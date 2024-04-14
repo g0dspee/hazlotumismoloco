@@ -34,27 +34,23 @@ if (document.getElementById('menu')) {
 
 };
 
-//Cambiar estado de logged/unlogged
+//Footer
 
-function iniciarSesion() {
+if (document.getElementById('footer')) {
 
-    // Agregar clase de usuario registrado
-    document.body.classList.add("registrado");
+    fetch('footer.html').then(response => {
 
-    // Quitar clase de usuario anonimo 
-    document.body.classList.remove("anonimo");
+        return response.text();
 
-}
+    }).then(htmlContent => {
 
+        document.getElementById('footer').innerHTML = htmlContent;
 
-function cerrarSesion() {
+        window.scrollTo(0, 0);
 
-    // Quitar clase registrado
-    document.body.classList.remove("registrado");
+    });
 
-    // Agregar clase anonimo
-    document.body.classList.add("anonimo");
-}
+};
 
 
 
