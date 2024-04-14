@@ -133,3 +133,7 @@ body{
     object-position: center top;
 }
 
+#fila-iconos {
+  background-color: white;
+  border-radius: 12px;
+}
