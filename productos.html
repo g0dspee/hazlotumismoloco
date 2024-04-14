@@ -20,92 +20,66 @@
       id="menu"></div><!--Llamo al archivo menu_superior.html con script.js-->
       <form id="formProductos">
         <div class="container">
+          <br>
           <h2>Mantenedor de Productos</h2>
-          <div class="row">
-              <div class="col-md-3">
-                <div class="mb-3">
-                  <label for="ID" class="form-label">ID</label>
-                </div>
-                <div class="mb-3">
-                  <label for="button" class="form-label">Categoria</label>
-                </div>
-                <div class="mb-3">
-                  <label for="Nombre" class="form-label">Nombre</label>
-                </div>
-                <div class="mb-3">
-                  <label for="Descripción" class="form-label">Descripción</label>
-                </div>
-                <div class="mb-3">
-                  <label for="Precio" class="form-label">Precio</label>
-                </div>
-                <div class="mb-3">
-                  <label for="descuento Subscriptor" class="form-label">Descuento Subscriptor</label>
-                </div>
-                <div class="mb-3">
-                  <label for="descuento oferta" class="form-label">Descuento por oferta</label>
-                </div>
-              </div>  
+            <div class="row">
                 <div class="col-md-4">
-                  <div class="mb-3">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="ID"
-                      placeholder="ID"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    
+                  <div class="form-group row">
+                    <label for="inputID"
+                        class="col-sm-4 col-form-label">ID</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="inputID">
+                    </div>
+                  </div>  
+                  <div class="form-group row">
                     <div class="dropdown">
+                      <label for="inputCategoria" class="col-sm-4 col-form-label">Categoria</label>
                       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Categoria
                       </button>
                       <ul class="dropdown-menu">  
-                        <li><a class="dropdown-item" href="#">Perro</a></li>
-                        <li><a class="dropdown-item" href="#">Gato</a></li>
+                        <li><a class="dropdown-item" href="#">RPG</a></li>
+                        <li><a class="dropdown-item" href="#">Simulador</a></li>
                       </ul>
                     </div>
                   </div>
-                  
-                  <div class="mb-3">
-                    <input
-                      type="nombre"
-                      class="form-control"
-                      id="nombre"
-                      placeholder="Nombre"
-                    />
+                  <div class="form-group row">
+                    <label for="inputNombre"
+                        class="col-sm-4 col-form-label">Nombre</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="inputNombre">
+                    </div>
                   </div>
-                  <div class="mb-3">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
-
-                    </textarea>
+                  <div class="form-group row">
+                    <label for="inputDescripcion"
+                        class="col-sm-4 col-form-label">Descripcion</label>
+                    <div class="col-sm-8">
+                      <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                      </div>
+                    </div>
                   </div>
-    
-                  <div class="mb-3">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="precio"
-                      placeholder="Precio"
-                    />
+                  <div class="form-group row">
+                    <label for="inputPRecio"
+                        class="col-sm-4 col-form-label">Precio</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="inputPrecio">
+                    </div>
                   </div>
-    
-                  <div class="mb-3">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="password2"
-                      placeholder="Descuento Subscriptor"
-                    />
+                  <div class="form-group row">
+                    <label for="inputPRecio"
+                        class="col-sm-4 col-form-label">Desc. Sub</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="inputPrecio">
+                    </div>
                   </div>
-                  <div class="mb-3">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="descuento oferta"
-                      placeholder="Descuento por oferta"
-                    />
-                  </div>   
+                  <div class="form-group row">
+                    <label for="inputPRecio"
+                        class="col-sm-4 col-form-label">Desc. Oferta</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="inputPrecio">
+                    </div>
+                  </div>
                 </div>
                 <div class="col-md-4" style="text-align: center">
                   <img
@@ -117,6 +91,7 @@
                   <button type="submit" class="btn btn-primary">Examinar</button>
                 </div>    
               </div>
+              <br>
               <div class="row-md">
                 <button type="submit" class="btn btn-primary">Guardar</button>
                 <button type="submit" class="btn btn-primary">Nuevo</button>
@@ -169,9 +144,7 @@
                   </table>
                 </div>
               </div>
-            </div>
-          </div>
-          
+            </div>         
         </div>
       </form>
     </div>    
