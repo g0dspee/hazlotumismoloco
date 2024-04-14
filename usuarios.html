@@ -20,19 +20,173 @@
       id="menu">
     </div><!--Llamo al archivo menu_superior.html con script.js-->
     
-    <form class="form">
-      <div class="container">
-        <h2>Mantenedor de Usuarios</h2>
-        <div class="row g-3 align-items-center">
-          <div class="col-auto">
-            <label for="inputID" class="col-form-label">ID</label>
+    <div class="container">
+      <br>
+      <h2>Mantenedor de Usuarios</h2>
+        <div class="row justify-content-between">
+            <div class="col-md-4">
+              <div class="form-group row" id="TipoUsuario">
+                <label for="inputID"
+                class="col-sm-4 col-form-label">ID</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="inputID">
+                </div>
+              </div>  
+              <div class="form-group row">
+                <div class="col-sm-4">
+                  <label for="TipoUsuario">Tipo de usuario</label>
+                </div>
+                <div class="col-sm-4 mt-2">
+                  <div class="form-check form-check-inline" id="radio-usuario">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Cliente</label>
+                  </div>
+                </div>
+                <div class="col-sm-4 mt-2">
+                  <div class="form-check form-check-inline" id="radio-usuario">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Administrador</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row mt-2">
+                <label for="inputRut"
+                    class="col-sm-4 col-form-label">Rut</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="inputRut">
+                </div>
+              </div>
+              <div class="form-group row mt-2">
+                <label for="inputNombres"
+                    class="col-sm-4 col-form-label">Nombres</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="inputNombres">
+                </div>
+              </div>
+              <div class="form-group row mt-2">
+                <label for="inputApellidos"
+                    class="col-sm-4 col-form-label">Apellidos</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="inputApellidos">
+                </div>
+              </div>
+              <div class="form-group row mt-2">
+                <label for="inputCorreo"
+                    class="col-sm-4 col-form-label">Correo</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" id="inputCorreo">
+                </div>
+              </div>
+              <div class="form-group row mt-2">
+                <label for="inputDireccion"
+                    class="col-sm-4 col-form-label">Direccion</label>
+                <div class="col-sm-8">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                  </div>
+                </div>
+              </div> 
+              <div class="form-group row mt-2" >
+                <div class="col-sm-4">
+                  <label for="inputDireccion"
+                    class="col-sm-4 col-form-label">Con subscripcion</label>
+                </div>
+                <div class="col-sm-8">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Deseo subscribirme con un aporte de $3000 mensuales a SuperGames y obtener un 5% de descuento en mis compras
+                    </label>
+                  </div>
+                </div>
+                
+              </div>
+              
+            </div>
+            <div class="col-md-4" style="text-align: center">
+              <img
+              src="img/anon_user.webp"
+              alt="Imagen de perfil"
+              style="display: block; margin: 0 auto; width:60%"
+              />
+              <br>
+              <button type="submit" class="btn btn-primary">Examinar</button>
+            </div>    
           </div>
-          <div class="col-auto">
-            <input type="text" id="inputID" class="form-control">
+          <div class="form-group row mt-2 justify-content">
+            <label for="inputPRecio"
+                class="col-sm-1 col-form-label">Contraseña</label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" id="inputPrecio">
+            </div>
+            <div class="col-sm-4">
+              <button type="submit" class="btn btn-primary">Generar contraseña</button>
+            </div>
+
           </div>
-        </div>
-      </div>
-    </form>
+          <br>
+          <div class="row-md">            
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Nuevo</button>
+            <button type="submit" class="btn btn-primary">Eliminar</button>
+          </div>
+          <br>
+          <div class="row-md">
+            <div class="col">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Tipo Usuario</th>
+                    <th scope="col">Rut</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Con Subscripcion</th>
+                    <th scope="col">Imagen</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">34</th>
+                    <td>Cliente</td>
+                    <td>9.455.847-K</td>
+                    <td>Juan</td>
+                    <td>Perez</td>
+                    <td>jperez@gmail.com</td>
+                    <td>San Juan Bautista 666</td>
+                    <td>Si</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">35</th>
+                    <td>Administrador</td>
+                    <td>13.345.678-2</td>
+                    <td>Ana</td>
+                    <td>Torres</td>
+                    <td>atorres@gmail.com</td>
+                    <td>San Juan Bautista 666</td>
+                    <td>No</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">36</th>
+                    <td>Cliente</td>
+                    <td>13.345.678-2</td>
+                    <td>Pedro</td>
+                    <td>Gonzalez</td>
+                    <td>pgonzalez@gmail.com</td>
+                    <td>San Juan Bautista 666</td>
+                    <td>Si</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>         
+    </div>
 
   </body>
     <script
