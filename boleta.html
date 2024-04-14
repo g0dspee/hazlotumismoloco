@@ -19,9 +19,39 @@
     </div><!--Llamo al archivo menu_superior.html con script.js-->
     <title>Tienda de Videojuegos</title>
     <div class="container">
-      <div class="row-md">
-        <br>
-        <h2>Detalle de boleta 535</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <br>
+          <h2>Detalle de boleta 535</h2>
+        </div>
+        <div class="col-md-4">
+          <div class="row" >
+            <div class="col-sm-4">
+              <img
+                  src="img/vendido.png"
+                  alt="Icono Vendido"
+                  style="display: block; margin: 0 auto; width:60%"
+                  />
+            </div>
+            <div class="col-sm-4">
+              <img
+                  src="img/despachado.png"
+                  alt="Icono Despachado"
+                  style="display: block; margin: 0 auto; width:60%"
+                  />    
+            </div>
+            <div class="col-sm-4">
+              <img
+                  src="img/entregado.png"
+                  alt="Icono Entregado"
+                  style="display: block; margin: 0 auto; width:60%"
+                  />    
+            </div>
+          </div>
+        </div>
+
+
+
       </div>
 
       <div class="row-md">
@@ -73,25 +103,23 @@
             </tbody>
           </table>
           <div class="container mt-5">
-            <div class="card">
-              <div class="card-body d-flex justify-content-between align-items-center">
-                <h5 class="card-title mb-0">Precio sin IVA:<span id="resultado"> $24.300</span></h5>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body d-flex justify-content-between align-items-center">
-                <h5 class="card-title mb-0">Valor del IVA:<span id="resultado"> $5.700</span></h5>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body d-flex justify-content-between align-items-center">
-                <h5 class="card-title mb-0">Total a pagar:<span id="resultado"> $30.000</span></h5>
-              </div>
-            </div>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th scope="row">Precio sin IVA:</th>
+                  <td>$24.300</td>
+                </tr>
+                <tr>
+                  <th scope="row">Valor del IVA:</th>
+                  <td>$5.700</td>
+                </tr>
+                <tr>
+                  <th scope="row">Total a pagar:</th>
+                  <td>$30.000</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-
-
-
         </div>
       </div>
     </div>
