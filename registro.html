@@ -52,6 +52,19 @@
                                 id="apellidos" placeholder="Apellidos">
                         </div>
 
+                        
+
+                        <div class="mb-3">
+                            <label for="rut" class="form-label">Rut</label>
+                            <input required type="text" class="form-control"
+                                id="rut" aria-describedby="rutHelp"
+                                placeholder="RUT sin puntos y con guión">
+                            <div id="rutHelp" class="form-text">Escriba su RUT
+                                sin puntos y con guión</div>
+                            <div class="invalid-feedback">El RUT es un campo
+                                obligatorio</div>
+                        </div>
+
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input required type="email" class="form-control" id="email"
@@ -73,24 +86,11 @@
                             <input required type="password" class="form-control"
                                 id="password2" placeholder="Repetir contraseña">
                         </div>
-                        <div class="mb-3">
-                            <label for="rut" class="form-label">Rut</label>
-                            <input required type="text" class="form-control"
-                                id="rut" aria-describedby="rutHelp"
-                                placeholder="RUT sin puntos y con guión">
-                            <div id="rutHelp" class="form-text">Escriba su RUT
-                                sin puntos y con guión</div>
-                            <div class="invalid-feedback">El RUT es un campo
-                                obligatorio</div>
-                        </div>
+                        
 
                         <div class="mb-3">
-                            <label for="direccion"
-                                class="form-label">Dirección</label>
-                            <div class="form-control" id="direccion"
-                                style="white-space: pre-line;"
-                                contenteditable="true"
-                                placeholder="Dirección particular"></div>
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <textarea class="form-control" id="direccion" style="white-space: pre-line;" placeholder="Dirección particular"></textarea>
                         </div>
 
                         <div class="mb-3 form-check">
@@ -102,18 +102,21 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-
-                        <div class="mb-3">
-                            <label for="imagenPerfil" class="form-label">Sube tu
-                                foto de perfil aquí</label>
-                            <input type="file" class="form-control"
-                                id="imagenPerfil">
+                        <div class="mb-3 text-center">
+                            <label for="imagenPerfil" class="form-label">Sube tu foto de perfil aquí</label>
+                            <div style="margin-bottom: 10px;">
+                                <img id="imagenVistaPrevia" src="img/anon_user.webp" alt="Vista previa de la imagen" style="max-width: 100%; height: 250px; margin: 0 auto;">
+                            </div>
+                            <input type="file" class="form-control" id="imagenPerfil">
                         </div>
-
                     </div>
+
                     <div class="container" style="position: relative; width: 150px; height: 50px;">
                         <button type="submit" class="btn btn-primary" style="position: absolute; bottom: 0;">Registrarse</button>
                       </div>
+                      <div class="container" style="position: relative; width: 150px; height: 50px;">
+                        <button type="reset" class="btn btn-primary" style="position: absolute; bottom: 0;">Limpiar</button>
+                    </div>
                     
                 </div>
                 

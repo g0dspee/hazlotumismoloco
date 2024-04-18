@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: monospace;
+    font-family: Helvetica;
 }
 
 
@@ -74,18 +74,13 @@ body{
 
 /* Tarjetas de ficha de videojuegos*/
 
-.card-img-top{
-    width: auto;
-    height: auto;
-    max-width: 250px;
-}
-
 .card-content {
     display: flex;
   }
   
   .card-img-top {
-    width: 200px;
+    width: 250px;
+    height: 400px;
   }
   
   .card-body {
