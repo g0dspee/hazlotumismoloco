@@ -143,3 +143,20 @@ body{
   background-color: #333;
   color: #fff;
 }
+
+#texto-iconos p{
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#iconos-boleta{
+  margin-left: 5px;
+}
+
+#iconos-boleta img{
+  border-radius: 20%;
+}
+
+#total-boleta{
+  background-color: white;
+}

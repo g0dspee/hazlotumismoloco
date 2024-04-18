@@ -24,28 +24,39 @@
           <br>
           <h2>Detalle de boleta 535</h2>
         </div>
-        <div class="col-md-4" id="fila-iconos">
+        <div class="col-md-4" id="fila-iconos" >
           <div class="row mt-2 " >
             <div class="col-sm-4">
-              <img
-                  src="img/vendido.png"
-                  alt="Icono Vendido"
-                  style="display: block; margin: 0 auto; width:60%"
-                  />
+              <div class="col-md-4" id="iconos-boleta">
+                <img src="img/vendido.png" alt="Icono Despachado">
+              </div>
+              <div class="col text-center" id="texto-iconos">
+                <p><b>Vendido</b></p>
+                <p>17/03/2024</p>
+                <p>15:32</p>
+              </div>
+                
+            </div>
+            
+            <div class="col-sm-4">
+              <div class="col-md-4" id="iconos-boleta">
+                <img src="img/despachado.png" alt="Icono Despachado">
+              </div>
+              <div class="col text-center" id="texto-iconos">
+                <p><b>Despachado</b></p>
+                <p>18/03/2024</p>
+                <p>09:00</p>
+              </div>    
             </div>
             <div class="col-sm-4">
-              <img
-                  src="img/despachado.png"
-                  alt="Icono Despachado"
-                  style="display: block; margin: 0 auto; width:60%"
-                  />    
-            </div>
-            <div class="col-sm-4">
-              <img
-                  src="img/entregado.png"
-                  alt="Icono Entregado"
-                  style="display: block; margin: 0 auto; width:60%"
-                  />    
+              <div class="col-md-4" id="iconos-boleta">
+                <img src="img/entregado.png" alt="Icono Despachado">
+              </div>
+              <div class="col text-center" id="texto-iconos">
+                <p><b>Entregado</b></p>
+                <p>--</p>
+                <p>--</p>
+              </div>    
             </div>
           </div>
         </div>
@@ -59,7 +70,7 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">Categoria</th>
+                <th scope="col">Categoría</th>
                 <th scope="col">Producto</th>
                 <th scope="col">Precio</th>
                 <th scope="col">%Subscriptor</th>
@@ -102,9 +113,9 @@
               </tr>
             </tbody>
           </table>
-          <div class="container mt-5">
-            <table class="table">
-              <tbody>
+          <div class="container mt-3 d-md-flex justify-content-md-end">
+            <table class="table-sm">
+              <tbody id="total-boleta">
                 <tr>
                   <th scope="row">Precio sin IVA:</th>
                   <td>$24.300</td>
