@@ -160,3 +160,10 @@ body{
 #total-boleta{
   background-color: white;
 }
+
+/*Estilo Img API*/
+
+.product-image {
+  max-width: 100px;
+  height: 100px;
+}
