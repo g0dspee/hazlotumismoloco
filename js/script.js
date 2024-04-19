@@ -52,5 +52,21 @@ if (document.getElementById('footer')) {
 
 };
 
+//API
+
+$(document).ready(function() {
+    $.get('http://fakestoreapi.com/products', function(data) {
+        const productContainer = $('#product-list');
+        data.forEach(function(product) {
+            const li = $('<li>');
+            const img = $('<img>').attr('src', product.image).attr('alt', product.title).addClass('product-image');
+            const title = $('<span>').text(product.title);
+            li.append(img, title);
+            productContainer.append(li);
+        });
+    }).fail(function(error) {
+        console.log('Error:', error);
+    });
+});
 
 
