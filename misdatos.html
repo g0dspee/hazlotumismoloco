@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Datos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -16,56 +16,59 @@
 
         <h1 class="titulo">Mis Datos</h1>
 
-        <form id="formMisDatos">
+        <form id="formMisDatos" class="formulario">
 
             <h2>Mis Datos Registrados</h2>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" disabled>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" disabled>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password" disabled>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="password2" class="form-label">Repetir contraseña</label>
-                            <input type="password" class="form-control" id="password2" disabled>
-                        </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" disabled>
                     </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label for="rut" class="form-label">Rut</label>
-                            <input type="text" class="form-control" id="rut" disabled>
-                        </div>
-                        <div class="mb-3">
-                            <label for="direccion" class="form-label">Dirección</label>
-                            <input type="text" class="form-control" id="direccion" disabled>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="suscripcion" disabled>
-                            <label for="suscripcion">Quiero suscribirme para ser cliente premium</label>
-                        </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" disabled>
                     </div>
-                    <div class="col-md-4">
-                        <div style="text-align: center;">
-                            <img src="img/anon_user.webp" alt="Imagen de perfil" style="display: block; margin: 0 auto; width: 50%;">
-                            <p style="text-align: center;">Tu foto de perfil</p>
-                        </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" disabled>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password2" class="form-label">Repetir contraseña</label>
+                        <input type="password" class="form-control" id="password2" disabled>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary" disabled>Actualizar Datos</button>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="rut" class="form-label">Rut</label>
+                        <input type="text" class="form-control" id="rut" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" disabled>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="suscripcion" disabled>
+                        <label class="form-check-label" for="suscripcion">Quiero suscribirme para ser cliente premium</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="text-align: center;">
+                        <div id="contenedorImagen" class="mb-3">
+                            <img id="imagenVistaPrevia" src="img/anon_user.webp" alt="Imagen de perfil" style="width: 50%; height: auto;">
+                        </div>
+                        <label for="imagenPerfil" class="btn btn-primary mb-3">Examinar</label>
+                        <input type="file" class="form-control" id="imagenPerfil" style="display: none;">
+                        <p>Tu foto de perfil</p>
+                    </div>
+                </div>
             </div>
+            <button type="submit" class="btn btn-primary" disabled>Actualizar Datos</button>
+            <button type="button" class="btn btn-secondary mt-3">Cancelar</button>
 
         </form>
 
