@@ -1,137 +1,142 @@
+/* Reset de estilos y fuente */
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Helvetica;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-/* Fondo de pagina (body) */
-
-body{
-    background-color: antiquewhite !important;
+/* Fondo oscuro */
+body {
+  background-color: #1a1a1a !important;
+  color: #fff; /* Texto blanco */
 }
 
 /* Ajuste de imagenes de carrusel */
-
 .carousel-item img {
   height: 500px;
   object-fit: cover; 
 }
 
 /* Fondo translúcido de carrusel */
-
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo translúcido negro */
-  color: white; /* Color de texto blanco */
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo translúcido negro más oscuro */
+  color: #fff; /* Color de texto blanco */
   padding: 10px; /* Espaciado interno */
 }
 
 /* Titulo */
-
-.titulo{
-    text-align: center;
-    font-size: 40px;
-    padding-top: 50px;
+.titulo {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 50px;
+  color: #fff; /* Texto blanco */
 }
 
-/*Caja Login*/
-
+/* Caja Login */
 #containerLogin {
-    margin-left: 150px;
-  }
-  #containerLogin .cuadro_login {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-  }
-  #containerLogin .form-group {
-    margin-bottom: 10px;
-  }
-  #containerLogin .boton_ingresar {
-    width: 100%;
-  }
-
+  margin-left: 150px;
+}
+#containerLogin .cuadro_login {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #fff; /* Borde blanco */
+  border-radius: 5px;
+}
+#containerLogin .form-group {
+  margin-bottom: 10px;
+}
+#containerLogin .boton_ingresar {
+  width: 100%;
+  background-color: #bd5e5e; /* Rojo oscuro */
+  color: #fff; /* Texto blanco */
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
 
 /* Carrusel Pag Principal */
-
-#carouselExample{
-    margin-left: 20px;
-    margin-right: 20px;
+#carouselExample {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-#mini-producto{
-    margin-left: auto;
-    margin-right: auto; 
+#mini-producto {
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 .row {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;  
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;  
 }
 
-/* Tarjetas de ficha de videojuegos*/
-
+/* Tarjetas de ficha de videojuegos */
 .card-content {
-    display: flex;
-  }
-  
-  .card-img-top {
-    width: 250px;
-    height: 400px;
-  }
-  
-  .card-body {
-    margin-left: 20px;
-  }
-
-/* Caja de carrito de pago*/
-
-  .total-box {
-    border: 1px solid #ccc;
-    padding: 20px;
-    background-color: #f8f9fa;
-    width: 300px; /* Ajustado ancho para encajar con esquina*/
-    margin-bottom: 125px; 
-    margin-right: 125px; 
-  }
-
-
-  .total-section {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-  }
-
-  .total-box {
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #f8f9fa;
-  }
-
-  /*Parrafo Nosotros*/
-
-  #pNosotros {
-    margin-left: 60px;
-    margin-right: 60px;
-  }
-
-
-  /*Imagenes "nosotros"*/
-
-  .img-staff {
-    width: 100%;
-    height: 250px; /* Elige la altura deseada */
-    object-fit: cover;
-    object-position: center top;
+  display: flex;
+  transition: transform 0.3s ease; /* Transición suave */
+  width: 200px; /* Se reduce el ancho de la tarjeta */
+  height: 320px; /* Se reduce la altura de la tarjeta */
 }
 
-/*Footer*/
+.card-content:hover {
+  transform: scale(1.05); /* Escalar un poco al pasar el cursor */
+}
+.card-img-top {
+  width: 100%; /* Mantenemos el ancho de la imagen al 100% */
+  height: 200px; /* Se reduce el tamaño de la imagen */
+  object-fit: cover;
+  border-radius: 10px; /* Bordes redondeados */
+  border: 3px solid #bd5e5e; /* Borde rojo oscuro */
+  transition: transform 0.3s ease; /* Transición suave */
+}
 
+.card-img-top:hover {
+  transform: scale(1.1); /* Escalar un poco más al pasar el cursor */
+}
+.card-body {
+  margin-left: 20px;
+}
+
+
+
+
+/* Caja de carrito de pago */
+.total-box {
+  border: 1px solid #bd5e5e; /* Borde rojo oscuro */
+  padding: 20px;
+  background-color: #2b2b2b; /* Gris oscuro */
+  width: 300px;
+  margin-bottom: 125px; 
+  margin-right: 125px; 
+}
+
+.total-section {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* Parrafo Nosotros */
+#pNosotros {
+  margin-left: 60px;
+  margin-right: 60px;
+  color: #fff; /* Texto blanco */
+}
+
+/* Imagenes "nosotros" */
+.img-staff {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Footer */
 .icon-footer {
-  width: 24px; /* Ajusta el tamaño según tus necesidades */
+  width: 24px;
   height: 24px;
 }
 
@@ -139,31 +144,31 @@ body{
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 70px; /* Altura del footer */
-  background-color: #333;
-  color: #fff;
+  height: 70px;
+  background-color: #2b2b2b; /* Gris oscuro */
+  color: #fff; /* Texto blanco */
 }
 
-#texto-iconos p{
+#texto-iconos p {
   text-align: center;
   margin-bottom: 0;
 }
 
-#iconos-boleta{
+#iconos-boleta {
   margin-left: 5px;
 }
 
-#iconos-boleta img{
+#iconos-boleta img {
   border-radius: 20%;
 }
 
-#total-boleta{
+#total-boleta {
   background-color: white;
 }
 
-/*Estilo Img API*/
-
+/* Estilo Img API */
 .product-image {
   max-width: 100px;
   height: 100px;
 }
+
