@@ -121,3 +121,121 @@ fetch('http://fakestoreapi.com/products')
         });
       })
       .catch(error => console.error('Error:', error));
+
+      $(document).ready(function() {
+        $("#formRegistro").submit(function(event) {
+          event.preventDefault();
+          var form = $(this);
+          var isValid = true;
+      
+          // Validación del campo "Nombres"
+          var nombres = $("#nombre").val();
+          if (nombres.trim() === "") {
+            isValid = false;
+            $("#nombre").addClass("is-invalid");
+          } else {
+            $("#nombre").removeClass("is-invalid");
+          }
+      
+          // Validación del campo "Apellidos"
+          var apellidos = $("#apellidos").val();
+          if (apellidos.trim() === "") {
+            isValid = false;
+            $("#apellidos").addClass("is-invalid");
+          } else {
+            $("#apellidos").removeClass("is-invalid");
+          }
+      
+          // Validación del campo "Rut"
+          var rut = $("#rut").val();
+          if (rut.trim() === "") {
+            isValid = false;
+            $("#rut").addClass("is-invalid");
+          } else {
+            $("#rut").removeClass("is-invalid");
+          }
+      
+          // Validación del campo "Email"
+          var email = $("#email").val();
+          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (email.trim() === "" || !emailPattern.test(email)) {
+            isValid = false;
+            $("#email").addClass("is-invalid");
+          } else {
+            $("#email").removeClass("is-invalid");
+          }
+      
+          // Validación del campo "Contraseña"
+          var password = $("#password").val();
+          var passwordPattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+          if (password.trim() === "" || !passwordPattern.test(password)) {
+            isValid = false;
+            $("#password").addClass("is-invalid");
+          } else {
+            $("#password").removeClass("is-invalid");
+          }
+      
+          // Validación del campo "Repetir contraseña"
+          var password2 = $("#password2").val();
+          if (password2.trim() === "" || password2 !== password) {
+            isValid = false;
+            $("#password2").addClass("is-invalid");
+          } else {
+            $("#password2").removeClass("is-invalid");
+          }
+      
+          // Validación del campo "Dirección"
+          var direccion = $("#direccion").val();
+          if (direccion.trim() === "") {
+            isValid = false;
+            $("#direccion").addClass("is-invalid");
+          } else {
+            $("#direccion").removeClass("is-invalid");
+          }
+      
+          // Validación del campo "Imagen de perfil"
+          var imagenPerfil = $("#imagenPerfil").val();
+          if (imagenPerfil.trim() === "") {
+            isValid = false;
+            $("#imagenPerfil").addClass("is-invalid");
+          } else {
+            $("#imagenPerfil").removeClass("is-invalid");
+          }
+      
+          if (isValid) {
+            // El formulario es válido, puedes realizar acciones adicionales aquí
+            alert("Formulario válido");
+          } else {
+            // El formulario no es válido, puedes mostrar mensajes de error o realizar otras acciones
+            alert("Formulario inválido");
+          }
+      
+          form.addClass("was-validated");
+        });
+      });
+
+
+
+      
+
+      function validarRut(rut) {
+        rut = rut.replace(/[^\dkK]/g, ''); // Eliminar caracteres no válidos
+        if (rut.length < 2) {
+          return false; // Rut inválido si es muy corto
+        }
+        
+        var cuerpo = rut.slice(0, -1); // Obtener el cuerpo del rut (sin el dígito verificador)
+        var dv = rut.slice(-1).toUpperCase(); // Obtener el dígito verificador (último caracter, convertido a mayúscula)
+        
+        var suma = 0;
+        var multiplicador = 2;
+        for (var i = cuerpo.length - 1; i >= 0; i--) {
+          suma += parseInt(cuerpo.charAt(i)) * multiplicador;
+          multiplicador = multiplicador === 7 ? 2 : multiplicador + 1;
+        }
+        
+        var resultado = 11 - (suma % 11);
+        var digitoVerificadorCalculado = resultado === 11 ? '0' : resultado === 10 ? 'K' : resultado.toString();
+        
+        return dv === digitoVerificadorCalculado;
+      }
