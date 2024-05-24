@@ -1,0 +1,13 @@
+En general:
+	añadir footer y header a las paginas a las que le falta
+	no dejar scripts de estilos en archivos HTML, moverlos al archivo CSS
+	correciones menores de estilo en el archivo CSS
+
+- administración.html
+	añadir los enlaces HTML a los links (bodega.html, ventas.html, productos.html y usuarios.html)
+
+- nosotros.html
+	cambiar el lorem ipsum por una descripcion real y cambiar las fotos por gente real
+	
+- ropa.html
+	además de footer y header, colgar link de API a header (menu_superior.html)
