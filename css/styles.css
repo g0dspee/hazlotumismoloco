@@ -48,8 +48,6 @@ body {
 }
 #containerLogin .boton_ingresar {
   width: 100%;
-  background-color: #bd5e5e; /* Rojo oscuro */
-  color: #fff; /* Texto blanco */
   border: none;
   padding: 10px;
   border-radius: 5px;
