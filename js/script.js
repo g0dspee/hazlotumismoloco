@@ -79,7 +79,7 @@ $(document).ready(function() {
             cardBody.append(price);
             cardBody.append(button);
             card.append(cardBody);
-            cardColumn.append(image); // Mueve la imagen dentro de la columna de la tarjeta
+            cardColumn.append(image);
             cardColumn.append(card);
             row.append(cardColumn);
         });
@@ -87,12 +87,10 @@ $(document).ready(function() {
 });
 
 function formatPrice(price) {
-    // Formatear el precio según tus necesidades
     return '$' + price.toFixed(2);
 }
 
 function formatDescription(description) {
-    // Formatear la descripción según tus necesidades
     return description.substring(0, 100) + '...';
 }
 

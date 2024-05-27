@@ -75,7 +75,6 @@ body {
   display: flex;
 }
 
-
 .card-img-top {
   width: 100%; /* Mantenemos el ancho de la imagen al 100% */
   object-fit: contain;
@@ -84,17 +83,14 @@ body {
   max-height: 470px;
 }
 
-
-
-
 /* Caja de carrito de pago */
 .total-box {
   border: 1px solid #bd5e5e; /* Borde rojo oscuro */
   padding: 20px;
   background-color: #2b2b2b; /* Gris oscuro */
   width: 300px;
-  margin-bottom: 125px; 
-  margin-right: 125px; 
+  margin-bottom: 95px; 
+  margin-right: 95px; 
 }
 
 .total-section {
@@ -111,13 +107,15 @@ body {
 }
 
 /* Imagenes "nosotros" */
+
 .img-staff {
-  width: 100%;
+  width: 240px;
   height: 250px;
   object-fit: cover;
-  object-position: center top;
   border-radius: 10px; /* Bordes redondeados */
 }
+
+
 
 /* Footer */
 .icon-footer {
@@ -209,4 +207,32 @@ a:hover {
 
 .btn-primary {
     width: 100%;
+}
+
+/* Estilos para el ticket verde */
+.ticket-verde {
+  background-color: #2ecc71;
+  color: white;
+  padding: 2px;
+  border-radius: 2px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Estilos para el botón */
+.btn-small {
+  padding: 2px 5px;
+  font-size: 12px;
+}
+
+/* Estilos para separar el ticket y el botón */
+.ticket-verde,
+.btn-small {
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+/* Estilo para el contenido de la boleta */
+.modal-body p {
+  color: black; /* Cambiar el color del texto a negro */
 }
