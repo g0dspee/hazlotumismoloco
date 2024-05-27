@@ -3,8 +3,6 @@ En general:
 	no dejar scripts de estilos en archivos HTML, moverlos al archivo CSS
 	correciones menores de estilo en el archivo CSS
 
-- administración.html
-	añadir los enlaces HTML a los links (bodega.html, ventas.html, productos.html y usuarios.html)
 
 - nosotros.html
 	cambiar el lorem ipsum por una descripcion real y cambiar las fotos por gente real

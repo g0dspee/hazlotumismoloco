@@ -157,4 +157,56 @@ body {
   max-width: 100px;
   height: 100px;
 }
+/* Administracion */
 
+.opcion {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.opcion:hover {
+    background-color: #ddd;
+}
+a {
+    text-decoration: none;
+    color: blue;
+}
+a:hover {
+    text-decoration: underline;
+}
+/* Mis Datos */
+
+.formulario {
+    background-color: #201e1e;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.titulo {
+    text-align: center;
+}
+.btn-primary {
+    width: 100%;
+}
+/* Registro */
+
+.formulario {
+    background-color: #3b3939;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+    text-align: center;
+}
+
+.btn-primary {
+    width: 100%;
+}
