@@ -79,7 +79,6 @@ body {
   width: 100%; /* Mantenemos el ancho de la imagen al 100% */
   object-fit: contain;
   border-radius: 10px; /* Bordes redondeados */
-  border: 5px solid #00000079; /* Borde rojo oscuro */
   max-height: 470px;
 }
 
@@ -164,9 +163,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
-.opcion:hover {
-    background-color: #ddd;
-}
+
 a {
     text-decoration: none;
     color: blue;
