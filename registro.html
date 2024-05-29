@@ -18,49 +18,46 @@
     <div class="container">
         <h1 class="titulo">Registrarse</h1>
 
-        <form id="formRegistro" class="formulario" novalidate>
+        <form id="formulario-registro" class="formulario" novalidate>
             <h2>Crea tu cuenta</h2>
 
             <div class="row g-3">
                 <div class="col-md-6">
                     <div class="mb-3">
+                        <label for="rut" class="form-label">Rut</label>
+                        <input required type="text" class="form-control" id="rut" name="rut" aria-describedby="rutHelp" placeholder="RUT sin puntos y con guión">
+                        <div id="rutHelp" class="form-text" style="color:rgb(150, 150, 150)">Escriba su RUT sin puntos y con guión</div>
+                    </div>
+                    
+                    <div class="mb-3">
                         <label for="nombre" class="form-label">Nombres</label>
-                        <input required type="text" class="form-control" id="nombre" placeholder="Nombres">
+                        <input required type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombres">
                     </div>
 
                     <div class="mb-3">
                         <label for="apellidos" class="form-label">Apellidos</label>
-                        <input required type="text" class="form-control" id="apellidos" placeholder="Apellidos">
+                        <input required type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos">
                     </div>
-
+                    
                     <div class="mb-3">
-                        <label for="rut" class="form-label">Rut</label>
-                        <input required type="text" class="form-control" id="rut" aria-describedby="rutHelp"
-                            placeholder="RUT sin puntos y con guión">
-                        <div id="rutHelp" class="form-text" style="color:white">Escriba su RUT sin puntos y con guión</div>
-                        <div class="invalid-feedback">El RUT es un campo obligatorio</div>
+                        <label for="correo" class="form-label">Email</label>
+                        <input required type="email" class="form-control" id="correo" name="correo" placeholder="Email">
                     </div>
-
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input required type="email" class="form-control" id="email" placeholder="Email">
-                    </div>
-
+                    
                     <div class="mb-3">
                         <label for="password" class="form-label">Contraseña</label>
-                        <input required type="password" class="form-control" id="password" aria-describedby="pwHelp"
-                            placeholder="Contraseña">
-                        <div id="pwHelp" class="form-text">Contraseña de mínimo 8 caracteres, incluyendo un número y un caracter especial</div>
+                        <input required type="password" class="form-control" id="password" name="password" aria-describedby="pwHelp" placeholder="Contraseña">
+                        <div id="pwHelp" class="form-text" style="color:rgb(150, 150, 150)">Contraseña entre 5 y 15 caracteres</div>
                     </div>
-
+                    
                     <div class="mb-3">
                         <label for="password2" class="form-label">Repetir contraseña</label>
-                        <input required type="password" class="form-control" id="password2" placeholder="Repetir contraseña">
+                        <input required type="password" class="form-control" id="password2" name="password2" placeholder="Repetir contraseña">
                     </div>
 
                     <div class="mb-3">
                         <label for="direccion" class="form-label">Dirección</label>
-                        <textarea class="form-control" id="direccion" style="white-space: pre-line;"
+                        <textarea class="form-control" id="direccion" name="direccion" style="white-space: pre-line;"
                             placeholder="Dirección particular"></textarea>
                     </div>
 
@@ -91,11 +88,13 @@
 </form>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="js/script.js"></script>
 <script
 src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js" integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/script.js"></script>
+
 </body>
 </html>

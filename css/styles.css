@@ -236,3 +236,10 @@ a:hover {
 .modal-body p {
   color: black; /* Cambiar el color del texto a negro */
 }
+
+/*                                                         */
+
+.is-invalid {
+  color: red;
+  font-weight: bold;
+}
