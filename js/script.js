@@ -52,8 +52,6 @@ if (document.getElementById('footer')) {
 
 };
 
-//API
-
 $(document).ready(function () {
   $.get('http://fakestoreapi.com/products', function (data) {
     var productList = $('#product-list');
@@ -120,149 +118,195 @@ fetch('http://fakestoreapi.com/products')
   })
   .catch(error => console.error('Error:', error));
 
+//////////////////////////////////////////////////////////////////////////
 
-
-  $(document).ready(function () {
-    $.validator.addMethod("rutChileno", function (value, element) {
-      // Validar que el RUT tenga el formato correcto (8 o 9 dígitos + guión + dígito verificador)
-      var rutPattern = /^\d{7,8}-[\dK]$/;
-      if (!rutPattern.test(value)) {
-        return false;
+$(document).ready(function () {
+  // Configurar validación del formulario de bodega
+  $("#formulario-bodega").validate({
+    rules: {
+      selectCantidad: {
+        required: true,
+        number: true,
+        min: 1
       }
-  
-      // Validar el dígito verificador
-      var rutSinGuion = value.replace("-", "");
-      var rut = rutSinGuion.slice(0, -1);
-      var dv = rutSinGuion.slice(-1);
-      var factor = 2;
-      var sum = 0;
-      for (var i = rut.length - 1; i >= 0; i--) {
-        sum += parseInt(rut.charAt(i)) * factor;
-        factor = factor === 7 ? 2 : factor + 1;
+    },
+    messages: {
+      selectCantidad: {
+        required: "Por favor, ingresa una cantidad.",
+        number: "Por favor, ingresa un número válido.",
+        min: "La cantidad debe ser mayor a 0."
       }
-      var dvCalculado = 11 - (sum % 11);
-      dvCalculado = dvCalculado === 11 ? "0" : dvCalculado === 10 ? "K" : dvCalculado.toString();
-  
-      return dv === dvCalculado;
-    }, "El RUT no es válido (escriba sin puntos y con guión)");
-    $.validator.addMethod("emailCompleto", function (value, element) {
-      // Expresión regular para validar correo electrónico
-      var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,}))$/;
-  
-      // Validar correo electrónico con la expresión regular
-      return regex.test(value);
-    }, 'El formato del correo no es válido');
-    $.validator.addMethod("soloLetras", function (value, element) {
-      return this.optional(element) || /^[a-zA-Z\s]*$/.test(value);
-    }, "Sólo se permiten letras y espacios en blanco.");
-    document.getElementById('rut').addEventListener('keyup', function (e) {
-      e.target.value = e.target.value.toUpperCase();
-    });
-
-    $("#formulario-registro").validate({
-      rules: {
-        rut: {
-          required: true,
-          rutChileno: true
-        },
-        nombre: {
-          required: true,
-          soloLetras: true
-        },
-        apellidos: {
-          required: true,
-          soloLetras: true
-        },
-        correo: {
-          required: true,
-          emailCompleto: true,
-        },
-        password: {
-          required: true,
-          minlength: 5,
-          maxlength: 15,
-        },
-        password2: {
-          required: true,
-          minlength: 5,
-          maxlength: 15,
-          equalTo: "password",
-        },
-        direccion: {
-          required: true
-        },
-      },
-      messages: {
-        rut: {
-          required: "El RUT es un campo requerido",
-          rutChileno: "El RUT no es válido (escriba sin puntos y con guión)"
-        },
-        nombre: {
-          required: "El nombre es un campo requerido",
-          soloLetras: "El nombre sólo puede contener letras y espacios en blanco",
-        },
-        apellidos: {
-          required: "Los apellidos son un campo requerido",
-          soloLetras: "Los apellidos sólo pueden contener letras y espacios en blanco",
-        },
-        correo: {
-          required: "El correo es un campo requerido",
-          email: "El formato del correo no es válido",
-        },
-        password: {
-          required: "La contraseña es un campo requerido",
-          minlength: "La contraseña debe tener un mínimo de 5 caracteres",
-          maxlength: "La contraseña debe tener un máximo de 15 caracteres",
-        },
-        password2: {
-          required: "Repetir contraseña es un campo requerido",
-          minlength: "Repetir contraseña debe tener un mínimo de 5 caracteres",
-          maxlength: "Repetir contraseña debe tener un máximo de 15 caracteres",
-          equalTo: "Debe repetir la contraseña escrita anteriormente",
-        },
-        direccion: {
-          required: "Dirección es un campo requerido",
-        },
-      },
-      errorClass: "is-invalid", // Clase CSS para estilizar los errores
-      errorElement: "div", // Elemento HTML en el que se mostrará el mensaje de error
-      errorPlacement: function(error, element) {
-          error.insertAfter(element);
-      },
-      submitHandler: function (form) {
-          // Handle form submission here
-          form.submit();
-      }
-    });
-
-      console.log("Iniciando validación del formulario...");
-  
-      $("#formProductos").validate({
-          rules: {
-              inputCantidad: {
-                  required: true,
-                  number: true,
-                  min: 1.01 // Establece el valor mínimo a 1.01 para que sea mayor a 1
-              }
-          },
-          messages: {
-              inputCantidad: {
-                  required: "Por favor, ingrese una cantidad.",
-                  number: "Por favor, ingrese un número válido.",
-                  min: "La cantidad debe ser mayor a 1."
-              }
-          },
-          errorPlacement: function (error, element) {
-              error.insertAfter(element); // Coloca el mensaje de error después del input
-          },
-          submitHandler: function (form) {
-              // Aquí puedes agregar cualquier lógica adicional antes de enviar el formulario
-              console.log("Formulario validado y listo para ser enviado");
-              alert('Formulario validado y listo para ser enviado');
-              form.submit();
-          }
-      });
-  
-      // Agregar mensaje de registro para verificar que se ejecutó el código
-      console.log("Validación del formulario configurada correctamente.");
+    },
+    errorClass: "is-invalid",
+    errorElement: "div",
+    errorPlacement: function (error, element) {
+      error.insertAfter(element);
+    },
+    submitHandler: function (form) {
+      alert("Formulario válido y listo para ser enviado!");
+      form.submit();
+    }
   });
+
+  // Agregar el controlador de eventos para el clic en el botón #btnAgregar
+  $("#btnAgregar").click(function () {
+    if ($("#formulario-bodega").valid()) {
+      $("#formulario-bodega").submit();
+    }
+  });
+
+  // Configurar validación del formulario de ingreso
+  $("#formulario-ingresar").validate({
+    rules: {
+      cuenta: {
+        required: true,
+        email: true
+      },
+      password: {
+        required: true,
+        minlength: 8
+      }
+    },
+    messages: {
+      cuenta: {
+        required: "Por favor, ingresa tu cuenta.",
+        email: "Por favor, ingresa un correo electrónico válido."
+      },
+      password: {
+        required: "Por favor, ingresa tu contraseña.",
+        minlength: "La contraseña debe tener al menos 8 caracteres."
+      }
+    },
+    errorClass: "is-invalid",
+    errorElement: "div",
+    errorPlacement: function (error, element) {
+      error.insertAfter(element);
+    },
+    submitHandler: function (form) {
+      alert("Inicio de sesión exitoso!");
+      form.submit();
+    }
+  });
+
+  // Agregar el controlador de eventos para el clic en el botón de ingresar
+  $(".btnIngresar").click(function () {
+    if ($("#formulario-ingresar").valid()) {
+      $("#formulario-ingresar").submit();
+    }
+  });
+
+
+  $.validator.addMethod("rutChileno", function (value, element) {
+    // Validar que el RUT tenga el formato correcto (8 o 9 dígitos + guión + dígito verificador)
+    var rutPattern = /^\d{7,8}-[\dK]$/;
+    if (!rutPattern.test(value)) {
+      return false;
+    }
+
+    // Validar el dígito verificador
+    var rutSinGuion = value.replace("-", "");
+    var rut = rutSinGuion.slice(0, -1);
+    var dv = rutSinGuion.slice(-1);
+    var factor = 2;
+    var sum = 0;
+    for (var i = rut.length - 1; i >= 0; i--) {
+      sum += parseInt(rut.charAt(i)) * factor;
+      factor = factor === 7 ? 2 : factor + 1;
+    }
+    var dvCalculado = 11 - (sum % 11);
+    dvCalculado = dvCalculado === 11 ? "0" : dvCalculado === 10 ? "K" : dvCalculado.toString();
+
+    return dv === dvCalculado;
+  }, "El RUT no es válido (escriba sin puntos y con guión)");
+  $.validator.addMethod("emailCompleto", function (value, element) {
+    // Expresión regular para validar correo electrónico
+    var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,}))$/;
+
+    // Validar correo electrónico con la expresión regular
+    return regex.test(value);
+  }, 'El formato del correo no es válido');
+  $.validator.addMethod("soloLetras", function (value, element) {
+    return this.optional(element) || /^[a-zA-Z\s]*$/.test(value);
+  }, "Sólo se permiten letras y espacios en blanco.");
+  document.getElementById('rut').addEventListener('keyup', function (e) {
+    e.target.value = e.target.value.toUpperCase();
+  });
+
+  $("#formulario-registro").validate({
+    rules: {
+      rut: {
+        required: true,
+        rutChileno: true
+      },
+      nombre: {
+        required: true,
+        soloLetras: true
+      },
+      apellidos: {
+        required: true,
+        soloLetras: true
+      },
+      correo: {
+        required: true,
+        emailCompleto: true,
+      },
+      password: {
+        required: true,
+        minlength: 5,
+        maxlength: 15,
+      },
+      password2: {
+        required: true,
+        minlength: 5,
+        maxlength: 15,
+        equalTo: "password",
+      },
+      direccion: {
+        required: true
+      },
+    },
+    messages: {
+      rut: {
+        required: "El RUT es un campo requerido",
+        rutChileno: "El RUT no es válido (escriba sin puntos y con guión)"
+      },
+      nombre: {
+        required: "El nombre es un campo requerido",
+        soloLetras: "El nombre sólo puede contener letras y espacios en blanco",
+      },
+      apellidos: {
+        required: "Los apellidos son un campo requerido",
+        soloLetras: "Los apellidos sólo pueden contener letras y espacios en blanco",
+      },
+      correo: {
+        required: "El correo es un campo requerido",
+        email: "El formato del correo no es válido",
+      },
+      password: {
+        required: "La contraseña es un campo requerido",
+        minlength: "La contraseña debe tener un mínimo de 5 caracteres",
+        maxlength: "La contraseña debe tener un máximo de 15 caracteres",
+      },
+      password2: {
+        required: "Repetir contraseña es un campo requerido",
+        minlength: "Repetir contraseña debe tener un mínimo de 5 caracteres",
+        maxlength: "Repetir contraseña debe tener un máximo de 15 caracteres",
+        equalTo: "Debe repetir la contraseña escrita anteriormente",
+      },
+      direccion: {
+        required: "Dirección es un campo requerido",
+      },
+    },
+    errorClass: "is-invalid", // Clase CSS para estilizar los errores
+    errorElement: "div", // Elemento HTML en el que se mostrará el mensaje de error
+    errorPlacement: function (error, element) {
+      error.insertAfter(element);
+    },
+    submitHandler: function (form) {
+      // Handle form submission here
+      form.submit();
+    }
+  });
+
+
+});
