@@ -122,6 +122,10 @@ fetch('http://fakestoreapi.com/products')
 
 $(document).ready(function () {
   // Configurar validación del formulario de bodega
+
+
+
+
   $("#formulario-bodega").validate({
     rules: {
       selectCantidad: {
@@ -163,8 +167,7 @@ $(document).ready(function () {
         email: true
       },
       password: {
-        required: true,
-        minlength: 8
+        required: true
       }
     },
     messages: {
@@ -173,8 +176,7 @@ $(document).ready(function () {
         email: "Por favor, ingresa un correo electrónico válido."
       },
       password: {
-        required: "Por favor, ingresa tu contraseña.",
-        minlength: "La contraseña debe tener al menos 8 caracteres."
+        required: "Por favor, ingresa tu contraseña."
       }
     },
     errorClass: "is-invalid",
@@ -194,6 +196,177 @@ $(document).ready(function () {
       $("#formulario-ingresar").submit();
     }
   });
+
+
+  $("#formProductos").validate({
+    rules: {
+      id: {
+        required: true,
+        digits: true
+      },
+      nombre: {
+        required: true,
+        minlength: 2
+      },
+      descripcion: {
+        required: true,
+        minlength: 10
+      },
+      precio: {
+        required: true,
+        number: true,
+        min: 0
+      },
+      descuentoSub: {
+        required: true,
+        number: true,
+        min: 0,
+        max: 100
+      },
+      descuentoOferta: {
+        required: true,
+        number: true,
+        min: 0,
+        max: 100
+      }
+    },
+    messages: {
+      id: {
+        required: "Por favor, ingresa el ID del producto.",
+        digits: "El ID debe ser un número entero."
+      },
+      nombre: {
+        required: "Por favor, ingresa el nombre del producto.",
+        minlength: "El nombre debe tener al menos 2 caracteres."
+      },
+      descripcion: {
+        required: "Por favor, ingresa una descripción del producto.",
+        minlength: "La descripción debe tener al menos 10 caracteres."
+      },
+      precio: {
+        required: "Por favor, ingresa el precio del producto.",
+        number: "El precio debe ser un número válido.",
+        min: "El precio debe ser mayor o igual a 0."
+      },
+      descuentoSub: {
+        required: "Por favor, ingresa el descuento de suscripción.",
+        number: "El descuento debe ser un número válido.",
+        min: "El descuento debe ser mayor o igual a 0.",
+        max: "El descuento no puede ser mayor a 100."
+      },
+      descuentoOferta: {
+        required: "Por favor, ingresa el descuento de oferta.",
+        number: "El descuento debe ser un número válido.",
+        min: "El descuento debe ser mayor o igual a 0.",
+        max: "El descuento no puede ser mayor a 100."
+      }
+    },
+    errorClass: "is-invalid",
+    errorElement: "div",
+    errorPlacement: function (error, element) {
+      error.insertAfter(element);
+    },
+    submitHandler: function (form) {
+      alert("Formulario válido y listo para ser enviado!");
+      form.submit();
+    }
+  });
+
+
+  $("#formUsuarios").validate({
+    rules: {
+        id: {
+            required: true,
+            digits: true
+        },
+        tipoUsuario: {
+            required: true
+        },
+        rut: {
+            required: true,
+            minlength: 8
+        },
+        nombres: {
+            required: true,
+            minlength: 2
+        },
+        apellidos: {
+            required: true,
+            minlength: 2
+        },
+        correo: {
+            required: true,
+            email: true
+        },
+        direccion: {
+            required: true,
+            minlength: 10
+        },
+        contrasena: {
+            required: true,
+            minlength: 6
+        }
+    },
+    messages: {
+        id: {
+            required: "Por favor, ingresa el ID del usuario.",
+            digits: "El ID debe ser un número entero."
+        },
+        tipoUsuario: {
+            required: "Por favor, selecciona el tipo de usuario."
+        },
+        rut: {
+            required: "Por favor, ingresa el Rut.",
+            minlength: "El Rut debe tener al menos 8 caracteres."
+        },
+        nombres: {
+            required: "Por favor, ingresa los nombres.",
+            minlength: "Los nombres deben tener al menos 2 caracteres."
+        },
+        apellidos: {
+            required: "Por favor, ingresa los apellidos.",
+            minlength: "Los apellidos deben tener al menos 2 caracteres."
+        },
+        correo: {
+            required: "Por favor, ingresa el correo electrónico.",
+            email: "Por favor, ingresa un correo electrónico válido."
+        },
+        direccion: {
+            required: "Por favor, ingresa la dirección.",
+            minlength: "La dirección debe tener al menos 10 caracteres."
+        },
+        contrasena: {
+            required: "Por favor, ingresa la contraseña.",
+            minlength: "La contraseña debe tener al menos 6 caracteres."
+        }
+    },
+    errorClass: "is-invalid",
+    errorElement: "div",
+    errorPlacement: function (error, element) {
+        error.addClass("invalid-feedback");
+        if (element.prop("type") === "checkbox") {
+            error.insertAfter(element.next("label"));
+        } else {
+            error.insertAfter(element);
+        }
+    },
+    highlight: function (element, errorClass, validClass) {
+        $(element).addClass(errorClass).removeClass(validClass);
+        if ($(element).prop("type") === "radio") {
+            $(element).closest(".form-check").addClass(errorClass);
+        }
+    },
+    unhighlight: function (element, errorClass, validClass) {
+        $(element).removeClass(errorClass).addClass(validClass);
+        if ($(element).prop("type") === "radio") {
+            $(element).closest(".form-check").removeClass(errorClass);
+        }
+    },
+    submitHandler: function (form) {
+        alert("Formulario válido y listo para ser enviado!");
+        form.submit();
+    }
+});
 
 
   $.validator.addMethod("rutChileno", function (value, element) {
